@@ -1,0 +1,7 @@
+{
+    "video": false,
+    "baseUrl":"https://qa5848de7-web.rgtests.com",
+    "screenshotOnRunFailure": true,
+    "trashAssetsBeforeRuns": false,
+    "chromeWebSecurity": false
+}
