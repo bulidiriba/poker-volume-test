@@ -3,7 +3,7 @@
 echo "Bash version ${BASH_VERSION}..."
 timestamp=$(($(date +%s%N)/1000000))
      
-for i in {1..5}
+for i in {1..2}
   do
       # generate random username with prefix 'user-' and random 3 digits 
       digits=3
@@ -35,4 +35,4 @@ for i in {1..5}
      cypress run --spec=./cypress/integration/signup/signup.spec.js --headless --browser electron --env username=$username,email=$email,phone=$phone,ssn=$randSsn &
  done
 
-  while :; do :; done & kill -STOP $! && wait $!
+  wait

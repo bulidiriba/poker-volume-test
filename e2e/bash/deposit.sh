@@ -10,5 +10,5 @@ for i in {1..2}
      export CYPRESS_screenshotsFolder="reports/screenshots/$timestamp"
      cypress run --spec=./cypress/integration/deposit/deposit.spec.js --headless --browser electron --env email=bot$i,password=user.password &
  done
-
-  while :; do :; done & kill -STOP $! && wait $!
+ 
+  wait

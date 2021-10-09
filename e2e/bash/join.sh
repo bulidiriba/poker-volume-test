@@ -11,4 +11,4 @@ for i in {50..52}
      cypress run --spec=./cypress/integration/gameplay/join.spec.js --headless --browser electron --env email=bot$i,password=user.password &
  done
 
-  while :; do :; done & kill -STOP $! && wait $!
+ wait
