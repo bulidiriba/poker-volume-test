@@ -3,7 +3,7 @@
 echo "Bash version ${BASH_VERSION}..."
 timestamp=$(($(date +%s%N)/1000000))
      
-for i in {10..11}
+for i in {50..51}
   do
      echo "starting cypress: bot$i"
      export CYPRESS_videosFolder="reports/videos/$timestamp/bot$i"
