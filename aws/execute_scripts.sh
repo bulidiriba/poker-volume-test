@@ -24,9 +24,9 @@ ssh -i out/$1.pem ubuntu@$2 'sudo bash -s' < ./clone_repo.sh
 
 #configure the crontab file
 echo "----------------------------------"
-echo "Create the crontab config file with the provided Date of $DATE and file to be executed from cloned repo"
+echo "Create the crontab config file with the provided Date of $CRON_DATE and file to be executed from cloned repo"
 # get the run_test.sh that is going to be executed with crontab from the cloned repo
-echo $DATE "/poker/poker-volume-test/aws/run_test.sh" > /poker/cron.txt
+echo $CRON_DATE "/poker/poker-volume-test/run.sh" > /poker/cron.txt
 
 # set the cron job scheduler with crontab and configured file
 crontab /poker/cron.txt

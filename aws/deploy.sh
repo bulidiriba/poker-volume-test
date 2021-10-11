@@ -11,8 +11,7 @@ echo "Starting server setup for testing remote..."
 
 SETUP_REGION=$1
 VERSION=$2
-LOCKDOWN=$3
-DATE=$4
+CRON_DATE=$3 # Ex to run at 12:30am of Oct 11 of any year, should be given as "30 12 11 10 *" time zone should be in UTC
 
 echo $VERSION
 
@@ -37,7 +36,7 @@ then
 else
   echo "LINE"
   echo "$line"
-  bash -c "SETUP_REGION=$SETUP_REGION DATE=$DATE bash -x ./execute_scripts.sh $line $VERSION $info"
+  bash -c "SETUP_REGION=$SETUP_REGION CRON_DATE=$CRON_DATE bash -x ./execute_scripts.sh $line $VERSION $info"
   echo "----------MACHINE INFO----------"
   echo "$line"
 fi

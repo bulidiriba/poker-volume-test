@@ -1,4 +1,5 @@
-
+# go to the volume test repo
+cd /poker/poker-volume-test
 
 # check if the cypress docker container is running, if so stop it
 CONTAINER_NAME="cypress"
@@ -17,28 +18,6 @@ else
   echo "container not found"
 fi
 
-# create poker directory at the top level if not exist
-if [ -d "/poker"]
-then
-  echo "it exist"
-else 
-  mkdir /poker
-fi
-
-cd /poker
-
-# check for the directory if it exist remove it
-if [ -d "/poker/poker-volume-test" ]
-then
-   echo "the directory already exist so removing it ..."
-   rm -r /poker/poker-volume-test
-fi
-
-# clone the repo
-git clone https://github.com/bulidiriba/poker-volume-test.git
-
-# go to the repo
-cd poker-volume-test
 
 COMMAND='bash ./bash/signup.sh' docker-compose up --build
 # save the cypress docker container logs to host server itself
